@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Your Task",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,6 +9,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "8.2.4"
-  }
+    "inquirer": "^8.2.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Evermuniz/Professional-README-Generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Evermuniz/Professional-README-Generator/issues"
+  },
+  "homepage": "https://github.com/Evermuniz/Professional-README-Generator#readme"
 }
