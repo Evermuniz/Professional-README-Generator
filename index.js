@@ -14,7 +14,7 @@ const questions = [
     type: 'list',
     name: 'license',
     message: 'Which license would you like to use for your project?',
-    choices: ['MIT', 'Apache 2.0', 'GNU GPLv3'],
+    choices: ['MIT', 'Apache 2.0', 'GNU GPLv3', 'None'],
   },
   {
     type: 'input',
@@ -33,7 +33,7 @@ const questions = [
   },
   {
     type: 'input',
-    name: 'contribution',
+    name: 'contributing',
     message: 'If you would like other developers to contribute to your application, you can include guidelines for how to do so.'
   },
   {
