@@ -1,38 +1,36 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//This function will take the license that was selected in index.js and return a badge 
+//based on the input or an empty string if none was selected
 function renderLicenseBadge(license) {
-  //let licenseSelected = "";
-  if ((license = "Apache License")) {
+if (license !== "None") {
+  if ((license = "Apache 2.0")) {
     licenseSelected =
       "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
-  if ((license = "MIT License")) {
+  if ((license = "MIT")) {
     licenseSelected =
       "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
   }
-  if ((license = "GNU GPLv3 License")) {
+  if ((license = "GNU GPLv3")) {
     licenseSelected =
       "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
   }
-  if ((license = "None")){
-    licenseSelected = ""
-  }
 
   return licenseSelected;
 }
+return '';
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// This funcion will create a license link to navigate within the README 
+//if no license was selected then this will not generate in the file
 function renderLicenseLink(license) {
-  let licenseSelected = "";
   if (license !== "None") {
     return `\n - [License](#license)\n`;
   }
-  return licenseSelected;
+  return '';
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// This function will generate a license section if a license was selected
+//if no license was selected then no license will generate
 function renderLicenseSection(license) {
   if (license !== "None") {
     return `## License
@@ -41,12 +39,13 @@ function renderLicenseSection(license) {
   return "";
 }
 
-// TODO: Create a function to generate markdown for README
-function generateMarkdown(data) {
-  const licenseBadge = renderLicenseBadge(data.license);
+// This function will generate the actual readme content
+function generateMarkdown(data) { //the data parameter is passed from the inquirer prompts
+  const licenseBadge = renderLicenseBadge(license); //variables placed inside the function so they are defined after data is passed
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
 
+  //returning everything here as the content for the README and using the user answers to fill content
   return `# ${data.title}     
   
   ${licenseBadge}
@@ -89,4 +88,5 @@ function generateMarkdown(data) {
   `;
 }
 
-module.exports = generateMarkdown;
+//exporting the returned README content from the generateMarkdown function to be used in index.js 
+module.exports = generateMarkdown; 
