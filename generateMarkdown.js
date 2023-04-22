@@ -33,8 +33,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license  !== 'None') {
-    return `## License
-    This project is licensed under the ${license} license. `
+    return `This project is licensed under the ${license} license.`
   }
   return '';
 }
@@ -48,7 +47,7 @@ function generateMarkdown(data) {
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
 
-  return `# ${data.title} ${licenseBadge}
+  return `# ${data.title}     ${licenseBadge}
 
   ## Description
 
@@ -70,9 +69,9 @@ function generateMarkdown(data) {
 
   ${data.usage}
 
-  ## Credits
+  ## Contributing
 
-  ${data.credits}
+  ${data.contributing}
 
   ## License
 
@@ -82,7 +81,7 @@ function generateMarkdown(data) {
   ## Questions
 
   If you have any questions, please contact me at ${data.email}.
-  You can also visit my GitHub profile: https://github.com/${data.username}/
+  You can also visit my GitHub profile: https://github.com/${data.github}/
   `;
   
 }
