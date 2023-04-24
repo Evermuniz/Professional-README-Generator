@@ -32,6 +32,9 @@
   
   Please visit the [Contributor Covenant](https://www.contributor-covenant.org/)
 
+  ## Credits
+  Learning material and resources provided by the UofU Coding Bootcamp. Usage of node.js along with Inquirer and FS packages. 
+
   ## Tests
 
   No tests at this point
