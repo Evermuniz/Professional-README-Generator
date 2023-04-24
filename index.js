@@ -1,7 +1,7 @@
 // using file system, inquirer, and generateMarkdown modules
-const fs = require('fs')
-const inquirer = require('inquirer')
-const generateMarkdown = require('./generateMarkdown')
+const fs = require('fs');
+const inquirer = require('inquirer');
+const generateMarkdown = require('./generateMarkdown');
 
 // All questions used in the command line are defined here
 const questions = [
@@ -63,10 +63,10 @@ function writeToFile(fileName, data) { // The function is called within the init
 // This function begins the entire process
 function init() {
     inquirer.prompt(questions).then((answers) => { //Inquirer will prompt questions through the CL using the questions array
-        const markdown = generateMarkdown(answers, answers.license); // Passing the answers to generateMarkdown 
-        writeToFile('Test.md', markdown)
-        console.log(answers);
-    });
+        const markdown = generateMarkdown(answers, answers.license); // Passing the answers to generateMarkdown and license to the license functions
+        writeToFile('README.md', markdown, (err) =>//calling the writeToFile function, naming the file and using the markdown const data, and then a callback function 
+        err ? console.error(err) : console.log(answers)
+    )});
 }
 
 // Function call to initialize app

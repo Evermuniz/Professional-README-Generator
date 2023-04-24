@@ -2,15 +2,15 @@
 //based on the input or an empty string if none was selected
 function renderLicenseBadge(license) {
 if (license !== "None") {
-  if ((license = "Apache 2.0")) {
+  if ((license === "Apache 2.0")) {
     licenseSelected =
       "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)";
   }
-  if ((license = "MIT")) {
+  if ((license === "MIT")) {
     licenseSelected =
       "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
   }
-  if ((license = "GNU GPLv3")) {
+  if ((license === "GNU GPLv3")) {
     licenseSelected =
       "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)";
   }
@@ -41,7 +41,7 @@ function renderLicenseSection(license) {
 
 // This function will generate the actual readme content
 function generateMarkdown(data) { //the data parameter is passed from the inquirer prompts
-  const licenseBadge = renderLicenseBadge(license); //variables placed inside the function so they are defined after data is passed
+  const licenseBadge = renderLicenseBadge(data.license); //variables placed inside the function so they are defined after data is passed
   const licenseLink = renderLicenseLink(data.license);
   const licenseSection = renderLicenseSection(data.license);
 
